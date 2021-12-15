@@ -10,22 +10,25 @@
 
 1. Common CSS
 2. Header CSS
-3. Index Banner CSS
-4. Card slider Sec CSS
-5. Categories Cards Sec CSS
-6. Remote Learning Sec CSS
-7. Know About Platform Sec CSS
-8. Testimonial Sec CSS
-9. Partner Slider Sec CSS
-10. Apply card Sec CSS
-11. Footer CSS
-12. Responsive CSS
+3. Hero Banner version2 CSS
+4. Skilify Info Card css
+5. categories Cards Sec CSS
+6. Multi Course cards Sec CSS
+7. Know About Platform v2 Sec CSS
+8. Card slider Sec CSS
+9. Remote Learning Sec CSS
+10. Footer CSS
+11. Responsive CSS
 */
 /*
 ================================================
 1. Common CSS
 ================================================
 */
+
+:root {
+  --primaryColor: #0b0633;
+}
 html,
 body {
   font-family: "Poppins";
@@ -93,7 +96,7 @@ h6 {
 }
 
 .bg-primary-dark {
-  background-color: #f56962 !important;
+  background-color: var(--primaryColor) !important;
 }
 
 .bg-secondary {
@@ -155,7 +158,6 @@ h6 {
 }
 
 .categories-crd-list,
-.apply-crd-list,
 .multi-course-crd-list,
 .row-y-spacing {
   --bs-gutter-y: 1.5rem;
@@ -211,7 +213,7 @@ button {
 
 .btn-primary,
 .btn-secondary {
-  background: #f56962;
+  background: var(--primaryColor);
   border: none;
   border-radius: 4px;
   padding: 12px 25px;
@@ -236,8 +238,8 @@ button {
   padding: 12px 25px;
   font-size: 16px;
   transition: 0.2s;
-  color: #f56962;
-  border-color: #f56962;
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
 }
 
 .btn-outline-primary:hover,
@@ -453,11 +455,13 @@ button {
   color: #5f5982;
 }
 
+.object-position-left {
+  object-position: left !important;
+}
 .crd-img {
   height: 240px;
   width: 100%;
   object-fit: cover;
-  object-position: left;
   border-radius: 5px;
   transition: 0.5s;
 }
@@ -706,7 +710,7 @@ button {
   content: "";
   opacity: 1;
   position: absolute;
-  background-color: #f56962;
+  background-color: var(--primaryColor);
 }
 
 .navbar-toggler::after {
@@ -727,7 +731,7 @@ button {
 .collapsed.navbar-toggler::after,
 .collapsed.navbar-toggler::before {
   opacity: 1;
-  background-color: #f56962;
+  background-color: var(--primaryColor);
 }
 
 .collapsed.navbar-toggler::after,
@@ -787,68 +791,66 @@ button {
 
 /*
 ================================================
-3. Index Banner CSS
+3. Hero Banner version3 CSS
 ================================================
 */
-.index-banner-form {
-  box-shadow: 0 40px 70px 0px #f5b5b0;
-}
-
-.index-banner {
+.hero-banner-v3 {
   padding-top: 130px;
+  padding-bottom: 120px;
+  min-height: 80vh;
+  background-image: url("../images/img/hero-banner3.png");
+  background-position: center;
 }
 
-.index-banner::after,
-.index-banner::before {
+.hero-banner-v3::after {
   content: "";
   position: absolute;
-  background: url(../images/svg/dots-pattern-pink.svg) no-repeat;
-  height: 250px;
-  width: 110px;
-}
-
-.index-banner::after {
-  bottom: 0;
+  top: 0;
   left: 0;
-}
-
-.index-banner::before {
-  top: 25%;
-  right: 0;
-}
-
-.index-banner-img {
-  position: relative;
-  border-radius: 5%;
-  margin-bottom: 50px;
-}
-
-.index-banner-img img {
-  position: relative;
-  z-index: 2;
-  border-radius: 5%;
-}
-
-.index-banner-img::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50px;
-  z-index: 1;
-  border: 3px solid #f68c20;
-  border-radius: inherit;
+  width: 100%;
   height: 100%;
-  width: 80%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /*
 ================================================
-4. Card slider Sec CSS
+4. Skilify Info Card css
 ================================================
 */
+.skilify-info-sec {
+  padding-top: 40px;
+}
+
+.skilify-info-points {
+  top: -80px;
+  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
+}
+
+.skilify-info-point-img {
+  border: 2px solid #33333d;
+  border-radius: 50%;
+}
+
+.skilify-info-point-img img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 8px;
+  margin: 8px;
+  background-color: #33333d;
+}
+
+.info-point-primary .skilify-info-point-img {
+  border: 2px solid var(--primaryColor);
+}
+
+.info-point-primary .skilify-info-point-img img {
+  background-color: var(--primaryColor);
+}
+
 /*
 ================================================
-5. Categories Cards Sec CSS
+5. categories Cards Sec CSS
 ================================================
 */
 .categories-crd {
@@ -942,7 +944,57 @@ button {
 
 /*
 ================================================
-6. Remote Learning Sec CSS
+6. Multi Course cards Sec CSS
+================================================
+*/
+.multi-course-crd-sec.bg-white .course-card {
+  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
+}
+
+/*
+================================================
+7. Know About Platform v2 Sec CSS
+================================================
+*/
+.learn-steps-images::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primaryColor);
+  opacity: 0.4;
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;
+}
+
+.learn-step-img-wrap {
+  padding: 12px;
+  z-index: 2;
+  box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.learn-step-img-wrap img {
+  object-fit: cover;
+  height: 170px;
+  width: 200px;
+}
+
+.learn-step-img-wrap span {
+  height: 6px;
+  width: 100%;
+  display: block;
+}
+
+/*
+================================================
+8. Card slider Sec CSS
+================================================
+*/
+/*
+================================================
+9. Remote Learning Sec CSS
 ================================================
 */
 .remote-learning-sec::before,
@@ -1029,152 +1081,7 @@ button {
 
 /*
 ================================================
-7. Know About Platform Sec CSS
-================================================
-*/
-.know-about-img {
-  border-radius: 0 40% 0 0;
-  position: relative;
-  margin-top: 50px;
-}
-
-.know-about-img img {
-  border-radius: 0 40% 0 0;
-}
-
-.know-about-img::after {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: 0.8rem;
-  border: 5px solid #f56962;
-  height: 100%;
-  width: 80%;
-  border-radius: inherit;
-  z-index: -1;
-}
-
-/*
-================================================
-8. Testimonial Sec CSS
-================================================
-*/
-.testimonial-slider .section-content {
-  position: relative;
-}
-
-.testimonial-slider .section-content::before {
-  content: "";
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: url(../images/svg/dots-pattern-gray.svg) no-repeat;
-  height: 110px;
-  width: 250px;
-}
-
-.testimonial-list {
-  margin: 0 -15px;
-}
-
-.testimonial-item {
-  padding: 0 15px;
-}
-
-.testimonial-inner {
-  border-radius: 0px 30px 0px 0px;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 25px;
-  border-left: 4px solid transparent;
-  transition: 0.5s;
-}
-
-.testimonial-inner:hover {
-  background-color: white;
-  border-color: #f68c20;
-  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
-}
-
-.testimonial-profile-info span {
-  color: #91929a;
-  font-size: 16px;
-}
-
-.testimonial-profile-img img {
-  border-radius: 50%;
-}
-
-/*
-================================================
-9. Partner Slider Sec CSS
-================================================
-*/
-.partner-list {
-  margin: 0 -15px;
-}
-
-.partner-list .slick-track {
-  display: flex;
-  align-items: center;
-}
-
-.partner-item {
-  padding: 0 15px;
-}
-
-/*
-================================================
-10. Apply card Sec CSS
-================================================
-*/
-.apply-crd-sec {
-  position: relative;
-}
-
-.apply-crd-sec::before,
-.apply-crd-sec::after {
-  content: "";
-  position: absolute;
-  width: 110px;
-  height: 250px;
-}
-
-.apply-crd-sec::before {
-  top: 0;
-  right: 0;
-  background: url(../images/svg/dots-pattern-gray-vertical.svg) no-repeat;
-}
-
-.apply-crd-sec::after {
-  bottom: 0;
-  left: 0;
-  background: url(../images/svg/dots-pattern-pink.svg) no-repeat;
-}
-
-.apply-crd-list {
-  position: relative;
-  z-index: 3;
-}
-
-.apply-crd {
-  padding: 25px 15px;
-  background-color: #fff;
-  border-radius: 5px;
-  transition: 0.5s;
-}
-
-.apply-crd:hover {
-  box-shadow: 0 0 35px 1px #f5696270;
-}
-
-.apply-crd-img img {
-  border-radius: 50%;
-}
-
-/*
-================================================
-11. Footer CSS
+10. Footer CSS
 ================================================
 */
 .footer-link {
@@ -1209,7 +1116,7 @@ button {
 
 /*
 ================================================
-12. Responsive CSS
+11. Responsive CSS
 ================================================
 */
 @media only screen and (max-width: 1024px) {
@@ -1267,7 +1174,7 @@ button {
     width: 100%;
   }
   .header .nav-item {
-    border-bottom: 1px solid #f56962;
+    border-bottom: 1px solid var(--primaryColor);
   }
   .dropdown-menu.show {
     margin-bottom: 10px;
