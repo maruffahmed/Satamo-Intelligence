@@ -1,0 +1,728 @@
+/*
+    Template Name    : skilify
+	Description		 : HTML5 Template
+    Version          : 1.0
+/*
+================================================
+/* Table of Content
+==================================================
+
+1. Common CSS
+2. Form main CSS
+3. Responsive CSS
+
+*/
+/*
+================================================
+1. Common CSS
+================================================
+*/
+html,
+body {
+  font-family: "Poppins";
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+picture {
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+/** TMB LOADER  **/
+@keyframes tmbloader {
+  100% {
+    top: 100%;
+  }
+}
+
+#tmbLoader {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  animation: tmbloader 1s 1s linear forwards;
+  background-color: #fff;
+}
+
+/** colors  **/
+.bg-primary {
+  background-color: #fef0ef !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--primaryColor) !important;
+}
+
+.bg-secondary {
+  background-color: #efeff6 !important;
+}
+
+.bg-dark {
+  background-color: #33333d !important;
+}
+
+.text-primary {
+  color: #302d3a !important;
+}
+
+.text-secondary {
+  color: #5f5982 !important;
+}
+
+.text-third {
+  color: #91929a !important;
+}
+
+.text-focus {
+  color: #f68c20;
+}
+
+.text-focus:hover {
+  color: #f68c20;
+}
+
+/** Font weight **/
+.text-semi-bold {
+  font-weight: 600;
+}
+
+.text-medium-bold {
+  font-weight: 500;
+}
+
+/** spacing **/
+.pt-8,
+.py-8 {
+  padding-top: 80px;
+}
+
+.pb-8,
+.py-8 {
+  padding-bottom: 80px;
+}
+
+.mt-8,
+.my-8 {
+  margin-top: 80px;
+}
+
+.mb-8,
+.my-8 {
+  margin-bottom: 80px;
+}
+
+.multi-course-crd-list,
+.row-y-spacing {
+  --bs-gutter-y: 1.5rem;
+}
+
+/** button **/
+.dropdown-item {
+  outline: 0;
+}
+
+.dropdown-item:hover,
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:active:focus {
+  color: #fff;
+  background-color: #91929a;
+}
+
+.form-control:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.accordion-button {
+  border: 0;
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #efeff6;
+  color: #5f5982;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.btn {
+  text-transform: capitalize;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+.btn-primary,
+.btn-secondary {
+  background: var(--primaryColor);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 25px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-primary:focus,
+.btn-secondary:focus,
+.btn-primary:active:focus,
+.btn-secondary:active:focus {
+  background-color: #e65750;
+  box-shadow: 0 7px 15px -2px #e65750;
+}
+
+.btn-outline-primary {
+  border-radius: 4px;
+  padding: 12px 25px;
+  font-size: 16px;
+  transition: 0.2s;
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+.btn-outline-primary:active:focus {
+  color: #fff;
+  background-color: #e65750;
+  box-shadow: 0 7px 15px -2px #e65750;
+  border-color: #e65750;
+}
+
+.btn-secondary {
+  background: #efeff6;
+  color: #5f5982;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:active:focus {
+  color: #5f5982;
+  box-shadow: 0 7px 15px -2px #ccc;
+  background-color: #efeff6;
+}
+
+.btn-secondary-outline {
+  border-radius: 4px;
+  padding: 12px 25px;
+  font-size: 16px;
+  transition: 0.2s;
+  color: #5f5982;
+  border-color: #efeff6;
+}
+
+.btn-secondary-outline:hover,
+.btn-secondary-outline:active,
+.btn-secondary-outline:focus,
+.btn-secondary-outline:active:focus {
+  color: #5f5982;
+  box-shadow: 0 7px 15px -2px #ccc;
+  background-color: #efeff6;
+}
+
+/** main Content Top Gap Strat **/
+.main-top-gap {
+  margin-top: 85px;
+}
+
+/** main Content Top Gap End **/
+/** Commaon Hero Banner  css**/
+.banner-content {
+  position: relative;
+  z-index: 3;
+}
+
+.sub-banner-heading {
+  color: #5f5982;
+}
+
+.banner-heading {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.banner-brief {
+  font-size: 22px;
+}
+
+.banner-search {
+  border: 0;
+  outline: 0;
+}
+
+/** common sec parts **/
+.sec-heading {
+  color: #302d3a;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.text-white .sec-heading {
+  color: #fff;
+}
+
+.sec-brief {
+  font-size: 20px;
+  color: #5f5982;
+}
+
+.card-title {
+  color: #302d3a;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.card-subtitle {
+  color: #302d3a;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #5f5982;
+}
+
+.sec-header-btn a {
+  white-space: nowrap;
+}
+
+/** Crd Slider  css**/
+.crd-slider-list {
+  margin: -15px;
+}
+
+.crd-slider-list .crd-item {
+  padding: 15px;
+}
+
+.crd-slider-sec .sec-content {
+  position: relative;
+  z-index: 2;
+}
+
+.crd-slider-sec .sec-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(../images/svg/dots-pattern-gray.svg) no-repeat;
+  height: 110px;
+  width: 250px;
+}
+
+/** Course card  css**/
+.course-card {
+  position: relative;
+  height: 100%;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.5s;
+  box-shadow: 0 0 15px #ececea;
+}
+
+.course-card .crd-img-wrap {
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.course-card:hover {
+  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
+  transform: translateY(-15px);
+}
+
+.course-card .crd-content {
+  padding-bottom: 40px;
+}
+
+.course-card .crd-bottom {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  left: 15px;
+  gap: 0 5px;
+}
+
+.heart__path,
+.heart__stroke {
+  transition: all 0.5s 0s;
+}
+
+.heart__path {
+  fill: transparent;
+}
+
+.heart__stroke {
+  fill: #fff;
+}
+
+.wish-heart {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  stroke-width: 20px;
+  stroke: #fff;
+  transition: all 0.5s 0s;
+}
+
+.wish-heart.active .heart__svg {
+  stroke: red;
+  fill: red;
+}
+
+.wish-heart.active .heart__path,
+.wish-heart.active .heart__stroke {
+  fill: red;
+}
+
+.bookmark-icon.active {
+  fill: red;
+}
+
+.crd-info {
+  border-bottom: 1px solid #ccc;
+}
+
+.crd-info-txt {
+  font-size: 14px;
+  color: #5f5982;
+}
+
+.crd-img {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.crd-img.blog-crd-img {
+  height: 325px;
+}
+
+.crd-profile img {
+  border-radius: 8px;
+}
+
+.profile-name {
+  color: #5f5982;
+  font-size: 14px;
+}
+
+.crd-price del {
+  font-size: 16px;
+  color: #91929a;
+}
+
+.crd-price span {
+  font-size: 18px;
+  color: #f68c20;
+  font-weight: bold;
+}
+
+/** custom slider btns **/
+.crd-slider-btns {
+  position: relative;
+  z-index: 1;
+}
+
+.slider-dark .slide-btn {
+  background-color: #efeff6;
+}
+
+.slide-btn {
+  height: 50px;
+  width: 50px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.slide-btn svg {
+  fill: #909090;
+  transition: 0.3s;
+}
+
+.slide-btn:hover {
+  box-shadow: 0 0 10px -3px #ddd;
+}
+
+.slide-btn:hover svg {
+  fill: #f68c20;
+}
+
+.slide-prev svg {
+  transform: rotate(180deg);
+}
+
+.custom-slider-btn .slick-arrow {
+  display: none !important;
+}
+
+.custom-slider-dots .slick-dots,
+.custom-slider-dots-responsive .slick-dots {
+  display: flex;
+  width: calc(100% - 160px);
+  left: 50%;
+  bottom: -55px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.custom-slider-dots .slick-dots li,
+.custom-slider-dots-responsive .slick-dots li {
+  height: 3px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.custom-slider-dots .slick-dots li:last-child,
+.custom-slider-dots-responsive .slick-dots li:last-child {
+  margin-right: 0;
+}
+
+.custom-slider-dots .slick-dots li:first-child,
+.custom-slider-dots-responsive .slick-dots li:first-child {
+  margin-left: 0;
+}
+
+.custom-slider-dots .slick-dots li.slick-active,
+.custom-slider-dots-responsive .slick-dots li.slick-active {
+  background-color: #f68c20;
+}
+
+.custom-slider-dots .slick-dots button,
+.custom-slider-dots-responsive .slick-dots button {
+  height: 3px;
+  width: 100%;
+  padding: 0;
+}
+
+.custom-slider-dots .slick-dots button::before,
+.custom-slider-dots-responsive .slick-dots button::before {
+  display: none;
+}
+
+.custom-slider-dots-dark .slick-dots li {
+  background-color: #efeff6;
+}
+
+.custom-slider-dots-dark .slick-dots li.slick-active {
+  background-color: #f68c20;
+}
+
+.custom-slider-dots-responsive .slick-dots {
+  bottom: -30px;
+}
+
+/** custom slider btns **/
+.not-found-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/*
+================================================
+2. Form main CSS
+================================================
+*/
+.container {
+  max-width: 1440px;
+}
+
+.form-page-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav-link {
+  font-size: 16px;
+  color: #5f5982;
+}
+
+.form-page-half {
+  padding: 145px 25px 100px;
+}
+
+.form-page-left {
+  min-height: 100vh;
+  width: 40%;
+  background-color: var(--primaryColor);
+}
+
+.form-page-right {
+  width: 60%;
+}
+
+.form-page-right-content {
+  max-width: 525px;
+  margin: 0 auto;
+}
+
+.form-page .form-label {
+  font-size: 18px;
+}
+
+.form-page .form-control {
+  height: 54px;
+}
+
+.form-page .form-control::placeholder {
+  opacity: 0.5;
+}
+
+.form-page .form-control:focus {
+  border: 1px solid #888;
+}
+
+.form-page .forgot-password {
+  font-size: 18px;
+  color: #6c63ff;
+}
+
+.form-page .submit-btn {
+  height: 56px;
+}
+
+#showPassword {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  height: 24px;
+  width: 24px;
+  transform: translateY(-50%);
+  background: url(../images/svg/show-password.svg) no-repeat;
+  background-position: left;
+}
+
+#showPassword.active {
+  background: url(../images/svg/hide-password.svg) no-repeat;
+}
+
+.divider-line {
+  height: 1px;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.span-or {
+  font-size: 24px;
+}
+
+.goolge-signin:hover {
+  box-shadow: 0 3px 6px rgba(32, 33, 36, 0.2);
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/*
+================================================
+3. Responsive  CSS
+================================================
+*/
+@media only screen and (max-width: 1200px) {
+  .banner-heading {
+    font-size: 36px;
+  }
+  .banner-brief {
+    font-size: 18px;
+  }
+  .sec-heading {
+    font-size: 34px;
+  }
+  .sec-brief,
+  .form-page .form-label,
+  .form-page .forgot-password,
+  .card-text {
+    font-size: 16px;
+  }
+  .form-page-half {
+    padding: 120px 25px 40px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  html {
+    font-size: 70%;
+  }
+  .banner-heading {
+    font-size: 32px;
+  }
+  .banner-brief {
+    font-size: 16px;
+  }
+  .sec-heading {
+    font-size: 30px;
+  }
+  .sec-brief,
+  .form-page .form-label,
+  .form-page .forgot-password,
+  .card-text {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .form-page-left {
+    display: none;
+  }
+  .form-page-right {
+    width: 100%;
+  }
+}

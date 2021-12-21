@@ -1,0 +1,12 @@
+/* Custom css */
+:root {
+  --primaryColor: #0b0633;
+}
+.navbar-brand img {
+  max-width: 10%;
+  border-radius: 25px;
+}
+
+.object-position-left {
+  object-position: left !important;
+}

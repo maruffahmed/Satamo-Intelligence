@@ -10,22 +10,17 @@
 
 1. Common CSS
 2. Header CSS
-3. Hero Banner version2 CSS
-4. Skilify Info Card css
-5. categories Cards Sec CSS
-6. Multi Course cards Sec CSS
-7. Know About Platform v2 Sec CSS
-8. Card slider Sec CSS
-9. Remote Learning Sec CSS
-10. Footer CSS
-11. Responsive CSS
+3. Course Detail V1 CSS
+4. Card slider Sec CSS
+5. Discount Card Sec CSS
+6. Footer CSS
+7. Responsive CSS
 */
 /*
 ================================================
 1. Common CSS
 ================================================
 */
-
 :root {
   --primaryColor: #0b0633;
 }
@@ -157,7 +152,6 @@ h6 {
   margin-bottom: 80px;
 }
 
-.categories-crd-list,
 .multi-course-crd-list,
 .row-y-spacing {
   --bs-gutter-y: 1.5rem;
@@ -455,9 +449,6 @@ button {
   color: #5f5982;
 }
 
-.object-position-left {
-  object-position: left !important;
-}
 .crd-img {
   height: 240px;
   width: 100%;
@@ -791,297 +782,249 @@ button {
 
 /*
 ================================================
-3. Hero Banner version3 CSS
+3. Course Detail V1 CSS
 ================================================
 */
-.hero-banner-v3 {
-  padding-top: 130px;
-  padding-bottom: 120px;
-  min-height: 80vh;
-  background-image: url("../images/img/hero-banner3.png");
-  background-position: center;
+.course-detail-v2-main-sec .course-detail-banner {
+  padding-bottom: 240px;
 }
 
-.hero-banner-v3::after {
-  content: "";
-  position: absolute;
+.course-detail-v2-main-sec .course-detail-grid {
+  margin-top: -160px;
+  z-index: 4;
+}
+
+.course-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.4fr;
+  grid-gap: 0 50px;
+  grid-template-rows: max-content;
+}
+
+.corse-info-txt {
+  font-size: 14px;
+  color: #5f5982;
+}
+
+#course-detail-banner-bg {
   top: 0;
   left: 0;
+  z-index: -1;
+}
+
+.course-price del,
+.course-price span {
+  font-size: 24px;
+  color: #cac6d4;
+}
+
+.course-detail-crd-img img {
+  height: 100%;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  object-fit: cover;
 }
 
-/*
-================================================
-4. Skilify Info Card css
-================================================
-*/
-.skilify-info-sec {
-  padding-top: 40px;
-}
-
-.skilify-info-points {
-  top: -80px;
-  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
-}
-
-.skilify-info-point-img {
-  border: 2px solid #33333d;
-  border-radius: 50%;
-}
-
-.skilify-info-point-img img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  padding: 8px;
-  margin: 8px;
-  background-color: #33333d;
-}
-
-.info-point-primary .skilify-info-point-img {
-  border: 2px solid var(--primaryColor);
-}
-
-.info-point-primary .skilify-info-point-img img {
-  background-color: var(--primaryColor);
-}
-
-/*
-================================================
-5. categories Cards Sec CSS
-================================================
-*/
-.categories-crd {
-  padding: 25px;
-  height: 100%;
+.course-detail-crd {
+  background-color: #fff;
+  grid-row: span 3;
   border-radius: 5px;
+  box-shadow: 0 0 25px -5px #c5c5c5;
+  height: max-content;
+}
+
+.social-icon-item path {
+  fill: #cac6d4;
   transition: 0.5s;
-  display: block;
 }
 
-.categories-crd:hover {
-  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
+.insta-icon:hover path {
+  fill: url(#myGradient);
 }
 
-.categories-crd:hover .card-title,
-.categories-crd:hover .card-text {
+.fb-icon:hover path {
+  fill: #4267b2;
+}
+
+.whatsapp:hover path {
+  fill: #1bd741;
+}
+
+.twitter:hover path {
+  fill: #03a9f4;
+}
+
+.indeed:hover path {
+  fill: #0084b1;
+}
+
+.youtube:hover path {
+  fill: #fc0a00;
+}
+
+.reddit:hover path {
+  fill: #ff5722;
+}
+
+.course-detail-accodians .btn-secondary.active {
+  background-color: #f68c20;
+  border: 0;
+  box-shadow: 0 0 10px #c5c5c5;
   color: #fff;
 }
 
-.categories-crd:hover .categories-crd-img-wrap {
-  background-color: #fff;
+.course-detail-accodians .btn-secondary.active:focus {
+  box-shadow: 0 0 10px #c5c5c5;
 }
 
-.categories-crd-list-v3 .categories-crd {
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.categories-crd-list-v3 .categories-crd img {
+.instructor-image picture {
   height: 100%;
+  width: 137px;
+}
+
+.course-progress-bar {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  align-items: center;
+  gap: 15px;
+}
+
+.course-rating-crd .card-title {
+  font-size: 60px;
+}
+
+.course-rating-crd {
+  max-width: 170px;
   width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.categories-crd-img-wrap {
-  height: 60px;
-  width: 60px;
-  display: inline-block;
   border-radius: 5px;
-  transition: 0.5s;
 }
 
-.categories-crd-gray {
-  background-color: #efeff6;
+.course-detail-crd-btn {
+  width: 100%;
 }
 
-.categories-crd-gray .categories-crd-img-wrap {
-  background-color: #e2ddff;
+.profile-img img {
+  width: 60px;
+  border-radius: 8px;
 }
 
-.categories-crd-gray:hover {
-  background-color: #5444a5;
+.progress {
+  height: 10px;
+  background-color: #fff;
+  width: 100%;
 }
 
-.categories-crd-orange {
-  background-color: #f68c201a;
-}
-
-.categories-crd-orange .categories-crd-img-wrap {
-  background-color: #fae0d0;
-}
-
-.categories-crd-orange:hover {
+.progress-bar {
   background-color: #f68c20;
 }
 
-.categories-crd-blue {
-  background-color: #bbf0ff80;
+.accordion-button::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.25rem;
 }
 
-.categories-crd-blue .categories-crd-img-wrap {
-  background-color: #bbf0ff;
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(180deg) translateY(50%);
 }
 
-.categories-crd-blue:hover {
-  background-color: #36bbf0;
-}
-
-.categories-crd-green {
-  background-color: #cef6d680;
-}
-
-.categories-crd-green .categories-crd-img-wrap {
-  background-color: #cef6d6;
-}
-
-.categories-crd-green:hover {
-  background-color: #5fd46d;
+.course-detail-accordion .accordion-button {
+  padding: 1rem calc(3rem) 1rem 1.25rem;
 }
 
 /*
 ================================================
-6. Multi Course cards Sec CSS
+4. Card slider Sec CSS
 ================================================
 */
-.multi-course-crd-sec.bg-white .course-card {
+/*
+================================================
+5. Discount Card Sec CSS
+================================================
+*/
+.discount-crd-list {
+  margin: 0 -10px;
+}
+
+.discount-crd-item {
+  padding: 0 10px;
+}
+
+.discount-sec-content::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(../images/svg/dots-pattern-gray.svg) no-repeat;
+  height: 110px;
+  width: 250px;
+}
+
+.discount-crd {
+  display: block;
+  height: 300px;
+  width: calc(100% - 20px);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  margin: 0 0 0 auto;
+  transition: 0.5s;
+}
+
+.discount-crd:hover {
+  transform: scale(1.01);
   box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
 }
 
-/*
-================================================
-7. Know About Platform v2 Sec CSS
-================================================
-*/
-.learn-steps-images::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--primaryColor);
-  opacity: 0.4;
-  border-radius: 50%;
-  height: 350px;
-  width: 350px;
+.blue-wave {
+  background-image: url(../images/svg/blue-wave.svg);
 }
 
-.learn-step-img-wrap {
-  padding: 12px;
-  z-index: 2;
-  box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.5);
+.blue-wave .discount-persent-crd {
+  background-color: #64929f;
 }
 
-.learn-step-img-wrap img {
-  object-fit: cover;
-  height: 170px;
-  width: 200px;
+.brown-wave {
+  background-image: url(../images/svg/brown-wave.svg);
 }
 
-.learn-step-img-wrap span {
-  height: 6px;
-  width: 100%;
-  display: block;
+.brown-wave .discount-persent-crd {
+  background-color: #b3a092;
 }
 
-/*
-================================================
-8. Card slider Sec CSS
-================================================
-*/
-/*
-================================================
-9. Remote Learning Sec CSS
-================================================
-*/
-.remote-learning-sec::before,
-.remote-learning-sec::after {
-  content: "";
-  position: absolute;
-  width: 110px;
-  height: 250px;
+.cherry-wave {
+  background-image: url(../images/svg/cherry-wave.svg);
 }
 
-.remote-learning-sec::before {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background: url(../images/svg/dots-pattern-gray-vertical.svg) no-repeat;
+.cherry-wave .discount-persent-crd {
+  background-color: #df4161;
 }
 
-.remote-learning-sec::after {
+.discount-crd-img {
   bottom: 0;
-  left: 0;
-  background: url(../images/svg/dots-pattern-pink.svg) no-repeat;
-}
-
-.remote-learning-content {
-  z-index: 5;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.patterns-wrap img {
-  position: absolute;
-  z-index: 1;
-}
-
-.remote-circle1 {
-  top: 0;
-  left: 0;
-}
-
-.remote-circle2 {
-  top: 50%;
-  left: 5%;
-}
-
-.remote-circle3 {
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-}
-
-.remote-circle4 {
-  bottom: 0px;
-  left: 15px;
-}
-
-.remote-circle5 {
-  top: 0px;
-  right: 5%;
-}
-
-.remote-circle6 {
-  top: 0;
-  right: -5%;
-}
-
-.remote-circle7 {
-  top: 40%;
   right: 0;
 }
 
-.remote-circle8 {
-  bottom: 0px;
-  right: 10%;
+.discount-persent-crd {
+  border-radius: 5px;
+  text-align: center;
+  left: -20px;
+  bottom: 20px;
 }
 
-@keyframes swinging {
-  0% {
-    transform: rotate(-10deg) translate3d(-15px, 0, 0);
-  }
-  100% {
-    transform: rotate(10deg) translate3d(15px, 0, 0);
-  }
+.discount-persent-crd .card-text {
+  font-size: 14px;
+}
+
+.discount-persent-crd .card-title {
+  line-height: 1;
+  font-size: 40px;
 }
 
 /*
 ================================================
-10. Footer CSS
+6. Footer CSS
 ================================================
 */
 .footer-link {
@@ -1116,7 +1059,7 @@ button {
 
 /*
 ================================================
-11. Responsive CSS
+7. Responsive CSS
 ================================================
 */
 @media only screen and (max-width: 1024px) {

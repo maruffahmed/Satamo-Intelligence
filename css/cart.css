@@ -10,25 +10,16 @@
 
 1. Common CSS
 2. Header CSS
-3. Hero Banner version2 CSS
-4. Skilify Info Card css
-5. categories Cards Sec CSS
-6. Multi Course cards Sec CSS
-7. Know About Platform v2 Sec CSS
-8. Card slider Sec CSS
-9. Remote Learning Sec CSS
-10. Footer CSS
-11. Responsive CSS
+3. Cart Main css
+4. Discount Card Sec CSS
+5. Footer CSS
+6. Responsive CSS
 */
 /*
 ================================================
 1. Common CSS
 ================================================
 */
-
-:root {
-  --primaryColor: #0b0633;
-}
 html,
 body {
   font-family: "Poppins";
@@ -157,7 +148,6 @@ h6 {
   margin-bottom: 80px;
 }
 
-.categories-crd-list,
 .multi-course-crd-list,
 .row-y-spacing {
   --bs-gutter-y: 1.5rem;
@@ -455,9 +445,6 @@ button {
   color: #5f5982;
 }
 
-.object-position-left {
-  object-position: left !important;
-}
 .crd-img {
   height: 240px;
   width: 100%;
@@ -791,297 +778,177 @@ button {
 
 /*
 ================================================
-3. Hero Banner version3 CSS
+3. Cart Main css
 ================================================
 */
-.hero-banner-v3 {
-  padding-top: 130px;
-  padding-bottom: 120px;
-  min-height: 80vh;
-  background-image: url("../images/img/hero-banner3.png");
-  background-position: center;
+.readcrumb-sec {
+  padding-bottom: 160px;
 }
 
-.hero-banner-v3::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.cart-main-content {
+  margin-top: -80px;
+}
+
+.cart-course-item {
+  margin-top: 25px;
+}
+
+.cart-course-item:first-child {
+  margin-top: 0;
+}
+
+.cart-course-img {
+  min-width: 120px;
+  width: 120px;
+  height: 120px;
+}
+
+.cart-course-img picture,
+.cart-course-img img {
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  object-fit: cover;
 }
 
-/*
-================================================
-4. Skilify Info Card css
-================================================
-*/
-.skilify-info-sec {
-  padding-top: 40px;
+.cart-course-profile img {
+  border-radius: 8px;
 }
 
-.skilify-info-points {
-  top: -80px;
-  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
+.remove-cart-course img {
+  max-width: fit-content;
 }
 
-.skilify-info-point-img {
-  border: 2px solid #33333d;
-  border-radius: 50%;
+.cart-course-price del.card-subtitle,
+.cart-course-price span.card-subtitle,
+.check-out-crd del.card-subtitle,
+.check-out-crd span.card-subtitle {
+  opacity: 0.5;
 }
 
-.skilify-info-point-img img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  padding: 8px;
-  margin: 8px;
-  background-color: #33333d;
+.payment-crd-wrap .form-control:focus {
+  border: 1px solid #ced4da;
 }
 
-.info-point-primary .skilify-info-point-img {
+.check-out-crd,
+.payment-crd-wrap {
+  height: max-content;
+  min-width: 320px;
+}
+
+.payment-crd-wrap .form-control {
+  height: 40px;
+}
+
+.cart-coupen-code input {
+  border: 1px solid var(--primaryColor);
+  border-right: none;
+}
+
+.payment-crd-list .form-check-input + .form-check-label {
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+.payment-crd-list .form-check-input:checked + .form-check-label {
   border: 2px solid var(--primaryColor);
 }
 
-.info-point-primary .skilify-info-point-img img {
-  background-color: var(--primaryColor);
+@media only screen and (max-width: 991px) {
+  .check-out-crd,
+  .payment-crd-wrap,
+  .cart-course-list {
+    width: 100%;
+  }
 }
 
 /*
 ================================================
-5. categories Cards Sec CSS
+4. Discount Card Sec CSS
 ================================================
 */
-.categories-crd {
-  padding: 25px;
-  height: 100%;
-  border-radius: 5px;
-  transition: 0.5s;
-  display: block;
+.discount-crd-list {
+  margin: 0 -10px;
 }
 
-.categories-crd:hover {
-  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
+.discount-crd-item {
+  padding: 0 10px;
 }
 
-.categories-crd:hover .card-title,
-.categories-crd:hover .card-text {
-  color: #fff;
-}
-
-.categories-crd:hover .categories-crd-img-wrap {
-  background-color: #fff;
-}
-
-.categories-crd-list-v3 .categories-crd {
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.categories-crd-list-v3 .categories-crd img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.categories-crd-img-wrap {
-  height: 60px;
-  width: 60px;
-  display: inline-block;
-  border-radius: 5px;
-  transition: 0.5s;
-}
-
-.categories-crd-gray {
-  background-color: #efeff6;
-}
-
-.categories-crd-gray .categories-crd-img-wrap {
-  background-color: #e2ddff;
-}
-
-.categories-crd-gray:hover {
-  background-color: #5444a5;
-}
-
-.categories-crd-orange {
-  background-color: #f68c201a;
-}
-
-.categories-crd-orange .categories-crd-img-wrap {
-  background-color: #fae0d0;
-}
-
-.categories-crd-orange:hover {
-  background-color: #f68c20;
-}
-
-.categories-crd-blue {
-  background-color: #bbf0ff80;
-}
-
-.categories-crd-blue .categories-crd-img-wrap {
-  background-color: #bbf0ff;
-}
-
-.categories-crd-blue:hover {
-  background-color: #36bbf0;
-}
-
-.categories-crd-green {
-  background-color: #cef6d680;
-}
-
-.categories-crd-green .categories-crd-img-wrap {
-  background-color: #cef6d6;
-}
-
-.categories-crd-green:hover {
-  background-color: #5fd46d;
-}
-
-/*
-================================================
-6. Multi Course cards Sec CSS
-================================================
-*/
-.multi-course-crd-sec.bg-white .course-card {
-  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
-}
-
-/*
-================================================
-7. Know About Platform v2 Sec CSS
-================================================
-*/
-.learn-steps-images::after {
+.discount-sec-content::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--primaryColor);
-  opacity: 0.4;
-  border-radius: 50%;
-  height: 350px;
-  width: 350px;
-}
-
-.learn-step-img-wrap {
-  padding: 12px;
-  z-index: 2;
-  box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.5);
-}
-
-.learn-step-img-wrap img {
-  object-fit: cover;
-  height: 170px;
-  width: 200px;
-}
-
-.learn-step-img-wrap span {
-  height: 6px;
-  width: 100%;
-  display: block;
-}
-
-/*
-================================================
-8. Card slider Sec CSS
-================================================
-*/
-/*
-================================================
-9. Remote Learning Sec CSS
-================================================
-*/
-.remote-learning-sec::before,
-.remote-learning-sec::after {
-  content: "";
-  position: absolute;
-  width: 110px;
-  height: 250px;
-}
-
-.remote-learning-sec::before {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background: url(../images/svg/dots-pattern-gray-vertical.svg) no-repeat;
-}
-
-.remote-learning-sec::after {
   bottom: 0;
-  left: 0;
-  background: url(../images/svg/dots-pattern-pink.svg) no-repeat;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(../images/svg/dots-pattern-gray.svg) no-repeat;
+  height: 110px;
+  width: 250px;
 }
 
-.remote-learning-content {
-  z-index: 5;
-  max-width: 900px;
-  margin: 0 auto;
+.discount-crd {
+  display: block;
+  height: 300px;
+  width: calc(100% - 20px);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  margin: 0 0 0 auto;
+  transition: 0.5s;
 }
 
-.patterns-wrap img {
-  position: absolute;
-  z-index: 1;
+.discount-crd:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 30px -15px rgba(0, 0, 0, 0.4);
 }
 
-.remote-circle1 {
-  top: 0;
-  left: 0;
+.blue-wave {
+  background-image: url(../images/svg/blue-wave.svg);
 }
 
-.remote-circle2 {
-  top: 50%;
-  left: 5%;
+.blue-wave .discount-persent-crd {
+  background-color: #64929f;
 }
 
-.remote-circle3 {
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
+.brown-wave {
+  background-image: url(../images/svg/brown-wave.svg);
 }
 
-.remote-circle4 {
-  bottom: 0px;
-  left: 15px;
+.brown-wave .discount-persent-crd {
+  background-color: #b3a092;
 }
 
-.remote-circle5 {
-  top: 0px;
-  right: 5%;
+.cherry-wave {
+  background-image: url(../images/svg/cherry-wave.svg);
 }
 
-.remote-circle6 {
-  top: 0;
-  right: -5%;
+.cherry-wave .discount-persent-crd {
+  background-color: #df4161;
 }
 
-.remote-circle7 {
-  top: 40%;
+.discount-crd-img {
+  bottom: 0;
   right: 0;
 }
 
-.remote-circle8 {
-  bottom: 0px;
-  right: 10%;
+.discount-persent-crd {
+  border-radius: 5px;
+  text-align: center;
+  left: -20px;
+  bottom: 20px;
 }
 
-@keyframes swinging {
-  0% {
-    transform: rotate(-10deg) translate3d(-15px, 0, 0);
-  }
-  100% {
-    transform: rotate(10deg) translate3d(15px, 0, 0);
-  }
+.discount-persent-crd .card-text {
+  font-size: 14px;
+}
+
+.discount-persent-crd .card-title {
+  line-height: 1;
+  font-size: 40px;
 }
 
 /*
 ================================================
-10. Footer CSS
+5. Footer CSS
 ================================================
 */
 .footer-link {
@@ -1116,7 +983,7 @@ button {
 
 /*
 ================================================
-11. Responsive CSS
+6. Responsive CSS
 ================================================
 */
 @media only screen and (max-width: 1024px) {
